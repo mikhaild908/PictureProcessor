@@ -1,0 +1,24 @@
+{
+  "name": "pictureprocessor",
+  "version": "1.0.0",
+  "description": "picture processor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "picture",
+    "processor"
+  ],
+  "author": "Mike D",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.674.0",
+    "imagemagick": "^0.1.3"
+  },
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "@types/imagemagick": "0.0.30",
+    "typescript": "^3.8.3"
+  }
+}
