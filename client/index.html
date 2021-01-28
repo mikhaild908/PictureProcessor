@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <title>Picture Processor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- JQuery - required by Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.666.0.min.js"></script> -->
+    <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.677.0.min.js"></script> -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.822.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Picture Processor</h2>
+      </div>
+      <form role="form" id="pictureProcessorForm">
+        <div class="form-group">
+          <label>Step 1: Select border</label>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="frozen2-border-286x180.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Frozen 2</h5>
+                    <button type="button" class="btn btn-primary border borderButton" data-name="Frozen 2">Select</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="lauren-3rd-bday-286x180.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">My Little Lauren</h5>
+                    <button type="button" class="btn btn-primary border borderButton" data-name="My Little Lauren">Select</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                Another template here
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="alert alert-primary" role="alert" id="selectBorderMessageDiv">
+            No selected border
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="photoupload">Step 2: Upload your photo(540x360)</label>
+          <input type="file" id="photoupload" />
+        </div>
+        
+        <div class="form-group">
+          <!-- <label for="submitButton">Step 3: </label> -->
+          <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+        </div>
+
+        <div class="form-group">
+          <div class="alert alert-primary" role="alert" id="submitMessageDiv" style="display: none;">
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- This is where AWS Lambda is invoked -->
+    <script src="pictureProcessor.js"></script>
+  </body>
+</html>
